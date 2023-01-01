@@ -1,5 +1,15 @@
 import React from "react";
 
 export default function Skateboard() {
-  return <h2>Hey, I'm a Skateboard</h2>;
+  let allWheels = [];
+  for (let i = 0; i < props.numberOfWheels; i++) {
+    allWheels.push(<Wheel />);
+  }
+
+  return (
+    <>
+      <h2>Hey, I'm a Skateboard</h2>
+      {allWheels}
+    </>
+  );
 }
