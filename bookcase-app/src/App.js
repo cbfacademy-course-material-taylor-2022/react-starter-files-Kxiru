@@ -5,6 +5,7 @@ import BookList from "./components/BookList";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import About from "./pages/About";
+import Search from "./components/Search";
 
 const App = (props) => {
   const [books] = useState(data);
@@ -23,6 +24,7 @@ const App = (props) => {
             <>
               <Header />
               <h2>Welcome to the Bookcase App</h2>
+              <Search />
               <BookList books={books} addBook={addBook} />
             </>
           }
