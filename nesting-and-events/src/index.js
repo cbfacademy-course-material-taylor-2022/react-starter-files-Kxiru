@@ -13,6 +13,12 @@ const taskList = [
 ];
 
 function App() {
+  function toggleComplete(id, isComplete) {
+    console.log(
+      `Task with the id '${id}' is ${isComplete ? "Complete" : "Incomplete"}`
+    );
+  }
+
   function sortFunction(a, b) {
     if (a.isComplete == true && b.isComplete == false) {
       return 1;
@@ -34,7 +40,12 @@ function App() {
         <Task id="task3" title="Early Morning run" isComplete={false} /> */}
 
         {taskList.sort(sortFunction).map((task) => (
-          <Task id={task.id} title={task.title} isComplete={task.isComplete} />
+          <Task
+            id={task.id}
+            title={task.title}
+            isComplete={task.isComplete}
+            toggleComplete={toggleComplete}
+          />
         ))}
       </TaskContainer>
     </Fragment>
