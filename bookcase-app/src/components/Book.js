@@ -9,6 +9,11 @@ const Book = (props) => {
     },
   };
 
+  function addBook(title) {
+    console.log(`The Book
+'${title}' was clicked`);
+  }
+
   return (
     <div key={props.book.volumeInfo.title}>
       {/* Code below displays the book title */}
@@ -20,7 +25,10 @@ const Book = (props) => {
         {props.book.saleInfo.listPrice
           ? props.book.saleInfo.listPrice.amount
           : "None Provided"}
-      </h4>
+      </h4>{" "}
+      <button onClick={() => addBook(props.book.volumeInfo.title)}>
+        Add +
+      </button>
       <hr></hr>
     </div>
   );
