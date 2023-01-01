@@ -1,6 +1,14 @@
 import React from "react";
 
 const Book = (props) => {
+  Book.defaultProps = {
+    saleInfo: {
+      retailPrice: {
+        amount: "No price provided",
+      },
+    },
+  };
+
   return (
     <div key={props.book.volumeInfo.title}>
       {/* Code below displays the book title */}
