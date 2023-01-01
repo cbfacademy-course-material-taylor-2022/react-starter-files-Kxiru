@@ -1,7 +1,20 @@
-import React from 'react';
+import React from "react";
 
-function Book() {
-  return "This is the output of a book component. Replace this string with code to display an individual book's attributes.";
-}
-
+const Book = (props) => {
+  return (
+    <div key={props.book.volumeInfo.title}>
+      {/* Code below displays the book title */}
+      <h2>{props.book.volumeInfo.title}</h2>
+      <h4>{props.book.volumeInfo.authors}</h4>
+      <img src={props.book.volumeInfo.imageLinks.thumbnail} alt="" />
+      <h4>
+        Price:{" "}
+        {props.book.saleInfo.listPrice
+          ? props.book.saleInfo.listPrice.amount
+          : "None Provided"}
+      </h4>
+      <hr></hr>
+    </div>
+  );
+};
 export default Book;
