@@ -33,7 +33,9 @@ ilter=paid-ebooks&print-type=books&projection=lite`;
           element={
             <>
               <Header />
-              <h2>Welcome to the Bookcase App</h2>
+              <h2 style={{ fontFamily: "Verdana", color: "teal" }}>
+                Welcome to the Bookcase App
+              </h2>
               <Search findBooks={findBooks} />
               <BookList books={books} addBook={addBook} />
             </>

@@ -15,20 +15,27 @@ const Book = (props) => {
   //   }
 
   return (
-    <div key={props.book.volumeInfo.title}>
+    <div key={props.book.volumeInfo.title} style={{ fontFamily: "Verdana" }}>
       {/* Code below displays the book title */}
-      <h2>{props.book.volumeInfo.title}</h2>
-      <h4>{props.book.volumeInfo.authors}</h4>
-      <img src={props.book.volumeInfo.imageLinks.thumbnail} alt="" />
-      <h4>
-        Price:{" "}
-        {props.book.saleInfo.listPrice
-          ? props.book.saleInfo.listPrice.amount
-          : "None Provided"}
-      </h4>{" "}
-      <button onClick={() => props.addBook(props.book.volumeInfo.title)}>
-        Add +
-      </button>
+      <img
+        src={props.book.volumeInfo.imageLinks.thumbnail}
+        alt=""
+        style={{ margin: 10 }}
+      />
+      <div style={{ display: "inline-block" }}>
+        <h2>{props.book.volumeInfo.title}</h2>
+        <h4>{props.book.volumeInfo.authors}</h4>
+        <h4>
+          Price:{" "}
+          {props.book.saleInfo.listPrice
+            ? props.book.saleInfo.listPrice.amount
+            : "None Provided"}
+        </h4>{" "}
+        <button onClick={() => props.addBook(props.book.volumeInfo.title)}>
+          Add +
+        </button>
+      </div>
+
       <hr></hr>
     </div>
   );

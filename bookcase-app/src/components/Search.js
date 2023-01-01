@@ -18,8 +18,9 @@ const Search = (props) => {
         type="text"
         value={props.keyword}
         onChange={(e) => setKeyword(e.target.value)}
+        style={{ padding: 10, width: "75%" }}
       ></input>
-      <button>Submit</button>
+      <button style={{ padding: 10, marginLeft: 20 }}>Submit</button>
     </form>
   );
 };
