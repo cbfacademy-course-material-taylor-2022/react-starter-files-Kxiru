@@ -14,9 +14,9 @@ const App = (props) => {
     console.log(`The Book '${title}' was clicked`);
   }
 
-  async function findBooks(value) {
+  async function findBooks(value, page) {
     const url = `https://www.googleapis.com/books/v1/volumes?q=${value}&f
-ilter=paid-ebooks&print-type=books&projection=lite`;
+ilter=paid-ebooks&print-type=books&projection=lite&startIndex=${page}&maxResults=10&orderBy=relevance`;
 
     const results = await fetch(url).then((res) => res.json());
     if (!results.error) {
@@ -47,7 +47,9 @@ ilter=paid-ebooks&print-type=books&projection=lite`;
           element={
             <>
               <Header />
-              <h2>Welcome to the Bookcase</h2>
+              <h2 style={{ fontFamily: "Verdana", color: "teal" }}>
+                Welcome to the Bookcase
+              </h2>
               <Search findBooks={findBooks} />
               <BookList books={books} addBook={addBook} />
             </>
